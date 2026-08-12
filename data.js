@@ -210,7 +210,118 @@ const quizData = {
           "accepted_answers": ["21"],
           "explanation": "ไล่ตามนิยาม: sum(6) = 6+5+4+3+2+1+sum(0) = 6+5+4+3+2+1+0 = 21 เป็นการรวมค่าจำนวนเต็มตั้งแต่ 1 ถึง 6 โดยใช้หลักการ recursion ที่ลดค่า n ลงทีละ 1 จนถึง Base Case ที่ n=0"
         },
+          {
+    "question": "กำหนด Singly Linked List: node P มี INFO=10 และ LINK ชี้ไปยัง node Q ซึ่ง node Q มี INFO=20 และ LINK=NULL จงหาค่าของ P->LINK->INFO (ค่า INFO ของ node ที่ P ชี้ไปถึง)",
+    "options": [
+      "10",
+      "20",
+      "NULL",
+      "หาค่าไม่ได้เพราะข้อมูลไม่เพียงพอ"
+    ],
+    "correct_index": 1,
+    "explanation": "P->LINK คือการเข้าถึง pointer ของ P ที่ชี้ไปยัง node ถัดไป ซึ่งก็คือ node Q ดังนั้น P->LINK->INFO จึงหมายถึงค่า INFO ของ node Q นั่นเอง ซึ่งมีค่าเท่ากับ 20 การอ่านนิพจน์แบบนี้เป็นทักษะพื้นฐานในการเข้าถึงข้อมูลผ่านลำดับของ pointer ใน Linked List"
+  },
+  {
+    "question": "ใน Doubly Linked List หาก node X มี LLINK ชี้ไปที่ NULL แสดงว่า node X มีสถานะตามข้อใด",
+    "options": [
+      "X เป็น node สุดท้าย (tail) ของลิสต์",
+      "X เป็น node แรก (head) ของลิสต์ เพราะไม่มี node ใดอยู่ก่อนหน้า X",
+      "X เป็น node ที่ถูกลบไปแล้ว",
+      "ลิสต์นี้ไม่มี node ใดเลย (empty list)"
+    ],
+    "correct_index": 1,
+    "explanation": "LLINK ของ node ใน Doubly Linked List ชี้ไปยัง node ก่อนหน้า หาก LLINK ของ X เป็น NULL แสดงว่าไม่มี node ใดอยู่ก่อนหน้า X เลย ซึ่งหมายความว่า X คือ node แรกสุด (head) ของลิสต์นั่นเอง"
+  },
+  {
+    "question": "ใน Singly Linked List หาก node Y มี LINK เป็น NULL แสดงว่า node Y มีสถานะตามข้อใด",
+    "options": [
+      "Y เป็น node แรก (head) ของลิสต์",
+      "Y เป็น node สุดท้าย (tail) ของลิสต์ เพราะไม่มี node ใดอยู่ถัดจาก Y อีก",
+      "ลิสต์นี้มีความยาวเท่ากับ 1 เสมอ",
+      "เกิดข้อผิดพลาดในการสร้างลิสต์"
+    ],
+    "correct_index": 1,
+    "explanation": "LINK ของ node ใน Singly Linked List ชี้ไปยัง node ถัดไป หาก LINK ของ Y เป็น NULL แสดงว่าไม่มี node ใดอยู่ถัดจาก Y อีกแล้ว ซึ่งหมายความว่า Y คือ node สุดท้าย (tail) ของลิสต์ ไม่ว่าลิสต์นั้นจะมีความยาวเท่าใดก็ตาม"
+  },
+  {
+    "question": "หาก Linked List เป็นลิสต์ว่างเปล่า (ยังไม่มี node ใดเลย) ค่าของตัวแปร head ควรเป็นอย่างไร",
+    "options": [
+      "head ต้องชี้ไปที่ node แรกที่ยังไม่ถูกสร้าง",
+      "head ควรมีค่าเป็น NULL เพื่อบ่งบอกว่าไม่มี node ใดในลิสต์เลย",
+      "head ต้องมีค่าเป็น 0 เสมอไม่ว่ากรณีใด",
+      "ไม่จำเป็นต้องมีตัวแปร head หากลิสต์ว่างเปล่า"
+    ],
+    "correct_index": 1,
+    "explanation": "เมื่อ Linked List ยังไม่มี node ใดเลย ตัวแปร head ซึ่งทำหน้าที่ชี้ไปยัง node แรกของลิสต์ ควรมีค่าเป็น NULL เพื่อบ่งบอกว่าไม่มีข้อมูลใดๆ อยู่ในลิสต์ การตรวจสอบว่า head == NULL จึงเป็นวิธีมาตรฐานในการตรวจสอบว่าลิสต์ว่างเปล่าหรือไม่"
+  },
+  {
+    "question": "กำหนด Singly Linked List: A(INFO=5) -> B(INFO=10) -> C(INFO=15) -> NULL โดย head ชี้ไปที่ A จงหาค่าของ head->LINK->LINK->INFO",
+    "options": [
+      "5",
+      "10",
+      "15",
+      "NULL"
+    ],
+    "correct_index": 2,
+    "explanation": "head ชี้ไปที่ A ดังนั้น head->LINK คือ B และ head->LINK->LINK คือ C (เดินสอง link จาก A ไป B แล้วไป C) ดังนั้น head->LINK->LINK->INFO จึงหมายถึงค่า INFO ของ node C ซึ่งมีค่าเท่ากับ 15"
+  },
+  {
+    "question": "กำหนด Singly Linked List ที่มี 4 node เชื่อมต่อกัน: W -> X -> Y -> Z -> NULL หากต้องการนับจำนวน node ทั้งหมดในลิสต์นี้โดยเขียนโค้ด ต้องใช้หลักการใด",
+    "options": [
+      "อ่านค่า INFO ของ node แรกแล้วคูณด้วย 4 ทันที",
+      "เริ่มจาก head แล้ว traverse ไปทีละ node นับจำนวนครั้งที่เดินผ่าน จนกว่าจะพบ LINK เป็น NULL จึงหยุดนับ",
+      "ตรวจสอบเฉพาะ node สุดท้ายว่า LINK เป็น NULL หรือไม่ แล้วสรุปจำนวน node ได้ทันที",
+      "ไม่สามารถนับจำนวน node ใน Linked List ได้ ต้องทราบค่าคงที่ไว้ล่วงหน้าเท่านั้น"
+    ],
+    "correct_index": 1,
+    "explanation": "การนับจำนวน node ใน Linked List ต้องเริ่มจาก head แล้ว traverse ไปทีละ node พร้อมกับเพิ่มตัวนับ (counter) ทุกครั้งที่เดินผ่านหนึ่ง node จนกว่าจะถึง node ที่มี LINK เป็น NULL (node สุดท้าย) จึงหยุดการนับ สำหรับตัวอย่าง W->X->Y->Z->NULL จะนับได้ทั้งหมด 4 node"
+  },
+  {
+    "question": "กำหนด Doubly Linked List ที่มีเพียง 2 node: X มี LLINK=NULL, INFO=1, RLINK ชี้ไปที่ Y และ Y มี LLINK ชี้ไปที่ X, INFO=2, RLINK=NULL ลิสต์นี้มีจำนวน node ทั้งหมดกี่ node",
+    "options": [
+      "1 node",
+      "2 node",
+      "3 node",
+      "ไม่สามารถระบุได้จากข้อมูลที่ให้มา"
+    ],
+    "correct_index": 1,
+    "explanation": "จากคำอธิบาย มี node เพียงสองตัวคือ X และ Y ที่เชื่อมโยงกันแบบ doubly (X ชี้ไป Y ด้วย RLINK และ Y ชี้กลับมา X ด้วย LLINK) โดย X เป็น head (LLINK=NULL) และ Y เป็น tail (RLINK=NULL) ดังนั้นลิสต์นี้มีทั้งหมด 2 node"
+  },
+  {
+    "question": "การแทรก node ใหม่ (เรียกว่า NewNode) ที่ตำแหน่งหัว (head) ของ Singly Linked List ที่มีอยู่เดิม ต้องปรับ pointer ตามลำดับขั้นตอนใด",
+    "options": [
+      "ตั้งค่า head->LINK = NewNode แล้วจึงตั้ง NewNode->LINK = NULL",
+      "ตั้งค่า NewNode->LINK ให้ชี้ไปที่ head เดิมก่อน จากนั้นจึงปรับตัวแปร head ให้ชี้มาที่ NewNode",
+      "ตั้งค่า NewNode->LINK = NULL แล้วจึงลบ head เดิมทิ้ง",
+      "ไม่ต้องปรับ pointer ใดๆ เพียงเพิ่มค่าใน INFO ของ head เดิม"
+    ],
+    "correct_index": 1,
+    "explanation": "ลำดับที่ถูกต้องคือต้องให้ NewNode->LINK ชี้ไปที่ head เดิมก่อน (เพื่อไม่ให้สูญเสียการเชื่อมโยงไปยังส่วนที่เหลือของลิสต์) จากนั้นจึงปรับตัวแปร head ให้ชี้มาที่ NewNode แทน หากทำสลับลำดับกัน (ปรับ head ก่อน) จะทำให้สูญเสียการอ้างอิงไปยัง head เดิม ไม่สามารถเชื่อม NewNode->LINK ไปยัง head เดิมได้อีก"
+  },
+  {
+    "type": "fill_blank",
+    "question": "กำหนด Singly Linked List: A -> B -> C -> D -> NULL โดย head ชี้ไปที่ A จงตอบว่า head->LINK->LINK->LINK ชี้ไปที่ node ใด (ตอบเป็นตัวอักษรชื่อ node)",
+    "answer": "D",
+    "accepted_answers": ["D", "d"],
+    "explanation": "head ชี้ไปที่ A: head->LINK คือ B, head->LINK->LINK คือ C, head->LINK->LINK->LINK คือ D การเดิน 3 ครั้งจาก A จะไปถึง node D ซึ่งเป็น node สุดท้ายของลิสต์นี้พอดี"
+  },
+  {
+    "type": "fill_blank",
+    "question": "ใน Doubly Linked List หากพบว่า node ใดมี LLINK เป็น NULL แสดงว่า node นั้นคือ node ที่เรียกว่าอะไร (ตอบเป็นภาษาอังกฤษ 1 คำ)",
+    "answer": "head",
+    "accepted_answers": ["head", "Head", "first node", "First node", "node แรก"],
+    "explanation": "LLINK ที่เป็น NULL หมายความว่าไม่มี node ใดอยู่ก่อนหน้า node นั้นเลย จึงสรุปได้ว่า node นั้นคือ head หรือ node แรกสุดของลิสต์"
+  },
       ]
+
+
+
+
+
+
+
+
+
     },
     {
       "chapter_id": "chapter_array",
@@ -420,7 +531,118 @@ const quizData = {
     "accepted_answers": ["2024"],
     "explanation": "ใช้สูตร Address = Base + (row × n + col) × size = 2000 + (1×4 + 2) × 4 = 2000 + 6×4 = 2000 + 24 = 2024"
   },
+    {
+    "question": "กำหนด Singly Linked List: node P มี INFO=10 และ LINK ชี้ไปยัง node Q ซึ่ง node Q มี INFO=20 และ LINK=NULL จงหาค่าของ P->LINK->INFO (ค่า INFO ของ node ที่ P ชี้ไปถึง)",
+    "options": [
+      "10",
+      "20",
+      "NULL",
+      "หาค่าไม่ได้เพราะข้อมูลไม่เพียงพอ"
+    ],
+    "correct_index": 1,
+    "explanation": "P->LINK คือการเข้าถึง pointer ของ P ที่ชี้ไปยัง node ถัดไป ซึ่งก็คือ node Q ดังนั้น P->LINK->INFO จึงหมายถึงค่า INFO ของ node Q นั่นเอง ซึ่งมีค่าเท่ากับ 20 การอ่านนิพจน์แบบนี้เป็นทักษะพื้นฐานในการเข้าถึงข้อมูลผ่านลำดับของ pointer ใน Linked List"
+  },
+  {
+    "question": "ใน Doubly Linked List หาก node X มี LLINK ชี้ไปที่ NULL แสดงว่า node X มีสถานะตามข้อใด",
+    "options": [
+      "X เป็น node สุดท้าย (tail) ของลิสต์",
+      "X เป็น node แรก (head) ของลิสต์ เพราะไม่มี node ใดอยู่ก่อนหน้า X",
+      "X เป็น node ที่ถูกลบไปแล้ว",
+      "ลิสต์นี้ไม่มี node ใดเลย (empty list)"
+    ],
+    "correct_index": 1,
+    "explanation": "LLINK ของ node ใน Doubly Linked List ชี้ไปยัง node ก่อนหน้า หาก LLINK ของ X เป็น NULL แสดงว่าไม่มี node ใดอยู่ก่อนหน้า X เลย ซึ่งหมายความว่า X คือ node แรกสุด (head) ของลิสต์นั่นเอง"
+  },
+  {
+    "question": "ใน Singly Linked List หาก node Y มี LINK เป็น NULL แสดงว่า node Y มีสถานะตามข้อใด",
+    "options": [
+      "Y เป็น node แรก (head) ของลิสต์",
+      "Y เป็น node สุดท้าย (tail) ของลิสต์ เพราะไม่มี node ใดอยู่ถัดจาก Y อีก",
+      "ลิสต์นี้มีความยาวเท่ากับ 1 เสมอ",
+      "เกิดข้อผิดพลาดในการสร้างลิสต์"
+    ],
+    "correct_index": 1,
+    "explanation": "LINK ของ node ใน Singly Linked List ชี้ไปยัง node ถัดไป หาก LINK ของ Y เป็น NULL แสดงว่าไม่มี node ใดอยู่ถัดจาก Y อีกแล้ว ซึ่งหมายความว่า Y คือ node สุดท้าย (tail) ของลิสต์ ไม่ว่าลิสต์นั้นจะมีความยาวเท่าใดก็ตาม"
+  },
+  {
+    "question": "หาก Linked List เป็นลิสต์ว่างเปล่า (ยังไม่มี node ใดเลย) ค่าของตัวแปร head ควรเป็นอย่างไร",
+    "options": [
+      "head ต้องชี้ไปที่ node แรกที่ยังไม่ถูกสร้าง",
+      "head ควรมีค่าเป็น NULL เพื่อบ่งบอกว่าไม่มี node ใดในลิสต์เลย",
+      "head ต้องมีค่าเป็น 0 เสมอไม่ว่ากรณีใด",
+      "ไม่จำเป็นต้องมีตัวแปร head หากลิสต์ว่างเปล่า"
+    ],
+    "correct_index": 1,
+    "explanation": "เมื่อ Linked List ยังไม่มี node ใดเลย ตัวแปร head ซึ่งทำหน้าที่ชี้ไปยัง node แรกของลิสต์ ควรมีค่าเป็น NULL เพื่อบ่งบอกว่าไม่มีข้อมูลใดๆ อยู่ในลิสต์ การตรวจสอบว่า head == NULL จึงเป็นวิธีมาตรฐานในการตรวจสอบว่าลิสต์ว่างเปล่าหรือไม่"
+  },
+  {
+    "question": "กำหนด Singly Linked List: A(INFO=5) -> B(INFO=10) -> C(INFO=15) -> NULL โดย head ชี้ไปที่ A จงหาค่าของ head->LINK->LINK->INFO",
+    "options": [
+      "5",
+      "10",
+      "15",
+      "NULL"
+    ],
+    "correct_index": 2,
+    "explanation": "head ชี้ไปที่ A ดังนั้น head->LINK คือ B และ head->LINK->LINK คือ C (เดินสอง link จาก A ไป B แล้วไป C) ดังนั้น head->LINK->LINK->INFO จึงหมายถึงค่า INFO ของ node C ซึ่งมีค่าเท่ากับ 15"
+  },
+  {
+    "question": "กำหนด Singly Linked List ที่มี 4 node เชื่อมต่อกัน: W -> X -> Y -> Z -> NULL หากต้องการนับจำนวน node ทั้งหมดในลิสต์นี้โดยเขียนโค้ด ต้องใช้หลักการใด",
+    "options": [
+      "อ่านค่า INFO ของ node แรกแล้วคูณด้วย 4 ทันที",
+      "เริ่มจาก head แล้ว traverse ไปทีละ node นับจำนวนครั้งที่เดินผ่าน จนกว่าจะพบ LINK เป็น NULL จึงหยุดนับ",
+      "ตรวจสอบเฉพาะ node สุดท้ายว่า LINK เป็น NULL หรือไม่ แล้วสรุปจำนวน node ได้ทันที",
+      "ไม่สามารถนับจำนวน node ใน Linked List ได้ ต้องทราบค่าคงที่ไว้ล่วงหน้าเท่านั้น"
+    ],
+    "correct_index": 1,
+    "explanation": "การนับจำนวน node ใน Linked List ต้องเริ่มจาก head แล้ว traverse ไปทีละ node พร้อมกับเพิ่มตัวนับ (counter) ทุกครั้งที่เดินผ่านหนึ่ง node จนกว่าจะถึง node ที่มี LINK เป็น NULL (node สุดท้าย) จึงหยุดการนับ สำหรับตัวอย่าง W->X->Y->Z->NULL จะนับได้ทั้งหมด 4 node"
+  },
+  {
+    "question": "กำหนด Doubly Linked List ที่มีเพียง 2 node: X มี LLINK=NULL, INFO=1, RLINK ชี้ไปที่ Y และ Y มี LLINK ชี้ไปที่ X, INFO=2, RLINK=NULL ลิสต์นี้มีจำนวน node ทั้งหมดกี่ node",
+    "options": [
+      "1 node",
+      "2 node",
+      "3 node",
+      "ไม่สามารถระบุได้จากข้อมูลที่ให้มา"
+    ],
+    "correct_index": 1,
+    "explanation": "จากคำอธิบาย มี node เพียงสองตัวคือ X และ Y ที่เชื่อมโยงกันแบบ doubly (X ชี้ไป Y ด้วย RLINK และ Y ชี้กลับมา X ด้วย LLINK) โดย X เป็น head (LLINK=NULL) และ Y เป็น tail (RLINK=NULL) ดังนั้นลิสต์นี้มีทั้งหมด 2 node"
+  },
+  {
+    "question": "การแทรก node ใหม่ (เรียกว่า NewNode) ที่ตำแหน่งหัว (head) ของ Singly Linked List ที่มีอยู่เดิม ต้องปรับ pointer ตามลำดับขั้นตอนใด",
+    "options": [
+      "ตั้งค่า head->LINK = NewNode แล้วจึงตั้ง NewNode->LINK = NULL",
+      "ตั้งค่า NewNode->LINK ให้ชี้ไปที่ head เดิมก่อน จากนั้นจึงปรับตัวแปร head ให้ชี้มาที่ NewNode",
+      "ตั้งค่า NewNode->LINK = NULL แล้วจึงลบ head เดิมทิ้ง",
+      "ไม่ต้องปรับ pointer ใดๆ เพียงเพิ่มค่าใน INFO ของ head เดิม"
+    ],
+    "correct_index": 1,
+    "explanation": "ลำดับที่ถูกต้องคือต้องให้ NewNode->LINK ชี้ไปที่ head เดิมก่อน (เพื่อไม่ให้สูญเสียการเชื่อมโยงไปยังส่วนที่เหลือของลิสต์) จากนั้นจึงปรับตัวแปร head ให้ชี้มาที่ NewNode แทน หากทำสลับลำดับกัน (ปรับ head ก่อน) จะทำให้สูญเสียการอ้างอิงไปยัง head เดิม ไม่สามารถเชื่อม NewNode->LINK ไปยัง head เดิมได้อีก"
+  },
+  {
+    "type": "fill_blank",
+    "question": "กำหนด Singly Linked List: A -> B -> C -> D -> NULL โดย head ชี้ไปที่ A จงตอบว่า head->LINK->LINK->LINK ชี้ไปที่ node ใด (ตอบเป็นตัวอักษรชื่อ node)",
+    "answer": "D",
+    "accepted_answers": ["D", "d"],
+    "explanation": "head ชี้ไปที่ A: head->LINK คือ B, head->LINK->LINK คือ C, head->LINK->LINK->LINK คือ D การเดิน 3 ครั้งจาก A จะไปถึง node D ซึ่งเป็น node สุดท้ายของลิสต์นี้พอดี"
+  },
+  {
+    "type": "fill_blank",
+    "question": "ใน Doubly Linked List หากพบว่า node ใดมี LLINK เป็น NULL แสดงว่า node นั้นคือ node ที่เรียกว่าอะไร (ตอบเป็นภาษาอังกฤษ 1 คำ)",
+    "answer": "head",
+    "accepted_answers": ["head", "Head", "first node", "First node", "node แรก"],
+    "explanation": "LLINK ที่เป็น NULL หมายความว่าไม่มี node ใดอยู่ก่อนหน้า node นั้นเลย จึงสรุปได้ว่า node นั้นคือ head หรือ node แรกสุดของลิสต์"
+  },
       ]
+
+
+
+
+
+
+
+
+
     },
     {
       "chapter_id": "chapter_linked_list",
@@ -630,7 +852,120 @@ const quizData = {
     "accepted_answers": ["O(n)", "o(n)", "linear time"],
     "explanation": "เพราะต้อง traverse จาก head ไปจนถึง node ก่อนสุดท้ายก่อนจึงจะปรับ LINK ให้เป็น NULL ได้ ในกรณีเลวร้ายที่สุดต้องไล่ผ่านเกือบทุก node จึงมี Time Complexity เป็น O(n)"
   },
+    {
+    "question": "กำหนด Singly Linked List: node P มี INFO=10 และ LINK ชี้ไปยัง node Q ซึ่ง node Q มี INFO=20 และ LINK=NULL จงหาค่าของ P->LINK->INFO (ค่า INFO ของ node ที่ P ชี้ไปถึง)",
+    "options": [
+      "10",
+      "20",
+      "NULL",
+      "หาค่าไม่ได้เพราะข้อมูลไม่เพียงพอ"
+    ],
+    "correct_index": 1,
+    "explanation": "P->LINK คือการเข้าถึง pointer ของ P ที่ชี้ไปยัง node ถัดไป ซึ่งก็คือ node Q ดังนั้น P->LINK->INFO จึงหมายถึงค่า INFO ของ node Q นั่นเอง ซึ่งมีค่าเท่ากับ 20 การอ่านนิพจน์แบบนี้เป็นทักษะพื้นฐานในการเข้าถึงข้อมูลผ่านลำดับของ pointer ใน Linked List"
+  },
+  {
+    "question": "ใน Doubly Linked List หาก node X มี LLINK ชี้ไปที่ NULL แสดงว่า node X มีสถานะตามข้อใด",
+    "options": [
+      "X เป็น node สุดท้าย (tail) ของลิสต์",
+      "X เป็น node แรก (head) ของลิสต์ เพราะไม่มี node ใดอยู่ก่อนหน้า X",
+      "X เป็น node ที่ถูกลบไปแล้ว",
+      "ลิสต์นี้ไม่มี node ใดเลย (empty list)"
+    ],
+    "correct_index": 1,
+    "explanation": "LLINK ของ node ใน Doubly Linked List ชี้ไปยัง node ก่อนหน้า หาก LLINK ของ X เป็น NULL แสดงว่าไม่มี node ใดอยู่ก่อนหน้า X เลย ซึ่งหมายความว่า X คือ node แรกสุด (head) ของลิสต์นั่นเอง"
+  },
+  {
+    "question": "ใน Singly Linked List หาก node Y มี LINK เป็น NULL แสดงว่า node Y มีสถานะตามข้อใด",
+    "options": [
+      "Y เป็น node แรก (head) ของลิสต์",
+      "Y เป็น node สุดท้าย (tail) ของลิสต์ เพราะไม่มี node ใดอยู่ถัดจาก Y อีก",
+      "ลิสต์นี้มีความยาวเท่ากับ 1 เสมอ",
+      "เกิดข้อผิดพลาดในการสร้างลิสต์"
+    ],
+    "correct_index": 1,
+    "explanation": "LINK ของ node ใน Singly Linked List ชี้ไปยัง node ถัดไป หาก LINK ของ Y เป็น NULL แสดงว่าไม่มี node ใดอยู่ถัดจาก Y อีกแล้ว ซึ่งหมายความว่า Y คือ node สุดท้าย (tail) ของลิสต์ ไม่ว่าลิสต์นั้นจะมีความยาวเท่าใดก็ตาม"
+  },
+  {
+    "question": "หาก Linked List เป็นลิสต์ว่างเปล่า (ยังไม่มี node ใดเลย) ค่าของตัวแปร head ควรเป็นอย่างไร",
+    "options": [
+      "head ต้องชี้ไปที่ node แรกที่ยังไม่ถูกสร้าง",
+      "head ควรมีค่าเป็น NULL เพื่อบ่งบอกว่าไม่มี node ใดในลิสต์เลย",
+      "head ต้องมีค่าเป็น 0 เสมอไม่ว่ากรณีใด",
+      "ไม่จำเป็นต้องมีตัวแปร head หากลิสต์ว่างเปล่า"
+    ],
+    "correct_index": 1,
+    "explanation": "เมื่อ Linked List ยังไม่มี node ใดเลย ตัวแปร head ซึ่งทำหน้าที่ชี้ไปยัง node แรกของลิสต์ ควรมีค่าเป็น NULL เพื่อบ่งบอกว่าไม่มีข้อมูลใดๆ อยู่ในลิสต์ การตรวจสอบว่า head == NULL จึงเป็นวิธีมาตรฐานในการตรวจสอบว่าลิสต์ว่างเปล่าหรือไม่"
+  },
+  {
+    "question": "กำหนด Singly Linked List: A(INFO=5) -> B(INFO=10) -> C(INFO=15) -> NULL โดย head ชี้ไปที่ A จงหาค่าของ head->LINK->LINK->INFO",
+    "options": [
+      "5",
+      "10",
+      "15",
+      "NULL"
+    ],
+    "correct_index": 2,
+    "explanation": "head ชี้ไปที่ A ดังนั้น head->LINK คือ B และ head->LINK->LINK คือ C (เดินสอง link จาก A ไป B แล้วไป C) ดังนั้น head->LINK->LINK->INFO จึงหมายถึงค่า INFO ของ node C ซึ่งมีค่าเท่ากับ 15"
+  },
+  {
+    "question": "กำหนด Singly Linked List ที่มี 4 node เชื่อมต่อกัน: W -> X -> Y -> Z -> NULL หากต้องการนับจำนวน node ทั้งหมดในลิสต์นี้โดยเขียนโค้ด ต้องใช้หลักการใด",
+    "options": [
+      "อ่านค่า INFO ของ node แรกแล้วคูณด้วย 4 ทันที",
+      "เริ่มจาก head แล้ว traverse ไปทีละ node นับจำนวนครั้งที่เดินผ่าน จนกว่าจะพบ LINK เป็น NULL จึงหยุดนับ",
+      "ตรวจสอบเฉพาะ node สุดท้ายว่า LINK เป็น NULL หรือไม่ แล้วสรุปจำนวน node ได้ทันที",
+      "ไม่สามารถนับจำนวน node ใน Linked List ได้ ต้องทราบค่าคงที่ไว้ล่วงหน้าเท่านั้น"
+    ],
+    "correct_index": 1,
+    "explanation": "การนับจำนวน node ใน Linked List ต้องเริ่มจาก head แล้ว traverse ไปทีละ node พร้อมกับเพิ่มตัวนับ (counter) ทุกครั้งที่เดินผ่านหนึ่ง node จนกว่าจะถึง node ที่มี LINK เป็น NULL (node สุดท้าย) จึงหยุดการนับ สำหรับตัวอย่าง W->X->Y->Z->NULL จะนับได้ทั้งหมด 4 node"
+  },
+  {
+    "question": "กำหนด Doubly Linked List ที่มีเพียง 2 node: X มี LLINK=NULL, INFO=1, RLINK ชี้ไปที่ Y และ Y มี LLINK ชี้ไปที่ X, INFO=2, RLINK=NULL ลิสต์นี้มีจำนวน node ทั้งหมดกี่ node",
+    "options": [
+      "1 node",
+      "2 node",
+      "3 node",
+      "ไม่สามารถระบุได้จากข้อมูลที่ให้มา"
+    ],
+    "correct_index": 1,
+    "explanation": "จากคำอธิบาย มี node เพียงสองตัวคือ X และ Y ที่เชื่อมโยงกันแบบ doubly (X ชี้ไป Y ด้วย RLINK และ Y ชี้กลับมา X ด้วย LLINK) โดย X เป็น head (LLINK=NULL) และ Y เป็น tail (RLINK=NULL) ดังนั้นลิสต์นี้มีทั้งหมด 2 node"
+  },
+  {
+    "question": "การแทรก node ใหม่ (เรียกว่า NewNode) ที่ตำแหน่งหัว (head) ของ Singly Linked List ที่มีอยู่เดิม ต้องปรับ pointer ตามลำดับขั้นตอนใด",
+    "options": [
+      "ตั้งค่า head->LINK = NewNode แล้วจึงตั้ง NewNode->LINK = NULL",
+      "ตั้งค่า NewNode->LINK ให้ชี้ไปที่ head เดิมก่อน จากนั้นจึงปรับตัวแปร head ให้ชี้มาที่ NewNode",
+      "ตั้งค่า NewNode->LINK = NULL แล้วจึงลบ head เดิมทิ้ง",
+      "ไม่ต้องปรับ pointer ใดๆ เพียงเพิ่มค่าใน INFO ของ head เดิม"
+    ],
+    "correct_index": 1,
+    "explanation": "ลำดับที่ถูกต้องคือต้องให้ NewNode->LINK ชี้ไปที่ head เดิมก่อน (เพื่อไม่ให้สูญเสียการเชื่อมโยงไปยังส่วนที่เหลือของลิสต์) จากนั้นจึงปรับตัวแปร head ให้ชี้มาที่ NewNode แทน หากทำสลับลำดับกัน (ปรับ head ก่อน) จะทำให้สูญเสียการอ้างอิงไปยัง head เดิม ไม่สามารถเชื่อม NewNode->LINK ไปยัง head เดิมได้อีก"
+  },
+  {
+    "type": "fill_blank",
+    "question": "กำหนด Singly Linked List: A -> B -> C -> D -> NULL โดย head ชี้ไปที่ A จงตอบว่า head->LINK->LINK->LINK ชี้ไปที่ node ใด (ตอบเป็นตัวอักษรชื่อ node)",
+    "answer": "D",
+    "accepted_answers": ["D", "d"],
+    "explanation": "head ชี้ไปที่ A: head->LINK คือ B, head->LINK->LINK คือ C, head->LINK->LINK->LINK คือ D การเดิน 3 ครั้งจาก A จะไปถึง node D ซึ่งเป็น node สุดท้ายของลิสต์นี้พอดี"
+  },
+  {
+    "type": "fill_blank",
+    "question": "ใน Doubly Linked List หากพบว่า node ใดมี LLINK เป็น NULL แสดงว่า node นั้นคือ node ที่เรียกว่าอะไร (ตอบเป็นภาษาอังกฤษ 1 คำ)",
+    "answer": "head",
+    "accepted_answers": ["head", "Head", "first node", "First node", "node แรก"],
+    "explanation": "LLINK ที่เป็น NULL หมายความว่าไม่มี node ใดอยู่ก่อนหน้า node นั้นเลย จึงสรุปได้ว่า node นั้นคือ head หรือ node แรกสุดของลิสต์"
+  },
       ]
+
+
+
+
+
+
+
+
+
+
+
     },
     {
       "chapter_id": "chapter_stack",
@@ -840,7 +1175,118 @@ const quizData = {
     "accepted_answers": ["14"],
     "explanation": "ไล่ตามหลักการ Stack: push 3 -> [3], push 4 -> [3,4], พบ + pop 4,3 มาบวกกัน = 7 push กลับ -> [7], push 2 -> [7,2], พบ * pop 2,7 มาคูณกัน = 14 push กลับ -> [14] ค่าสุดท้ายคือ 14"
   },
+   {
+    "question": "ในขั้นตอนวิธีแปลง Infix เป็น Postfix โดยใช้ Operator Stack เมื่อสแกนพบ 'operator' ตัวใหม่ (o1) กฎการตัดสินใจว่าจะ pop operator ที่อยู่บน stack ออกมาก่อนหรือไม่ เป็นไปตามข้อใด",
+    "options": [
+      "pop operator บน stack ออกมาใส่ output เสมอทุกครั้งที่พบ operator ใหม่ โดยไม่ต้องเทียบ precedence",
+      "ให้ pop operator ที่อยู่บนสุดของ stack ออกมาใส่ output ไปเรื่อยๆ ตราบใดที่ตัวบนสุดไม่ใช่ '(' และมี precedence สูงกว่าหรือเท่ากับ o1 (กรณี left-associative) จากนั้นจึง push o1 ลง stack",
+      "push o1 ลง stack ทันทีโดยไม่สนใจว่า stack จะมีอะไรอยู่ก่อนหน้าเลย",
+      "ต้องเคลียร์ stack ให้ว่างก่อนเสมอ แล้วจึง push o1 เพียงตัวเดียว"
+    ],
+    "correct_index": 1,
+    "explanation": "หัวใจของขั้นตอนวิธีนี้คือ เมื่อพบ operator ใหม่ (o1) ให้ตรวจสอบตัวบนสุดของ stack ก่อน หากไม่ใช่วงเล็บเปิด '(' และมี precedence สูงกว่าหรือเท่ากับ o1 (สำหรับ operator แบบ left-associative) ให้ pop ออกมาใส่ output ก่อน ทำซ้ำแบบนี้ไปเรื่อยๆ จนกว่าเงื่อนไขจะไม่เป็นจริงอีก จากนั้นจึง push o1 ลง stack กฎนี้ทำให้ operator ที่มีความสำคัญสูงกว่าถูกประมวลผลก่อนเสมอ"
+  },
+  {
+    "question": "จงแปลง infix expression 'A*(B+C)-D' เป็น postfix โดยใช้ operator stack ทันทีหลังจากประมวลผลโทเค็น ')' เสร็จสิ้น (ก่อนสแกนโทเค็น '-') เนื้อหาที่เหลืออยู่ใน stack คือข้อใด",
+    "options": [
+      "stack ว่างเปล่า",
+      "มีเพียง '*' ตัวเดียวอยู่ใน stack",
+      "มี '*' และ '+' อยู่ใน stack",
+      "มี '(' อยู่ใน stack"
+    ],
+    "correct_index": 1,
+    "explanation": "ไล่ตามขั้นตอน: A->output, * push (stack:[*]), ( push (stack:[*,(]), B->output, + push เพราะ top เป็น '(' (stack:[*,(,+]), C->output, ) pop จนถึง '(' คือ pop '+' ออกไป output แล้ว pop '(' ทิ้ง (stack เหลือ:[*]) ดังนั้นทันทีหลังประมวลผล ')' เสร็จ ใน stack จะเหลือเพียง '*' ตัวเดียว"
+  },
+  {
+    "question": "จากตัวอย่างข้อก่อนหน้า (แปลง 'A*(B+C)-D' เป็น postfix) ผลลัพธ์ postfix expression สุดท้ายที่ถูกต้องคือข้อใด",
+    "options": [
+      "AB+C*D-",
+      "ABC+*D-",
+      "A*BC+D-",
+      "ABC*+D-"
+    ],
+    "correct_index": 1,
+    "explanation": "ไล่ตามขั้นตอนต่อจากข้อก่อนหน้า: output ปัจจุบันคือ 'ABC+' และ stack มี '*' หลังจากนั้นสแกน '-': เทียบ precedence กับ '*' บน stack ซึ่งสูงกว่า '-' จึง pop '*' ออกมาใส่ output ('ABC+*') แล้ว push '-' ลง stack สแกน D -> output 'ABC+*D' เมื่อจบนิพจน์ pop ตัวที่เหลือใน stack ('-') ออกมา ได้ output สุดท้ายคือ 'ABC+*D-'"
+  },
+  {
+    "question": "วิธีแปลง Infix เป็น Prefix แบบ 'reverse-convert-reverse' ที่นิยมใช้คำนวณด้วยมือ มีลำดับขั้นตอนตามข้อใด",
+    "options": [
+      "แปลง infix เป็น postfix ก่อน แล้วจึง reverse ผลลัพธ์ทันที โดยไม่ต้อง reverse นิพจน์ตั้งต้น",
+      "reverse นิพจน์ infix ตั้งต้น (พร้อมสลับวงเล็บเปิด-ปิด) จากนั้นแปลงนิพจน์ที่ reverse แล้วให้เป็น postfix ด้วยขั้นตอนวิธีมาตรฐาน แล้วจึง reverse ผลลัพธ์ postfix ที่ได้อีกครั้งเพื่อให้ได้ prefix",
+      "เพียง reverse นิพจน์ infix ตั้งต้นเท่านั้น ก็จะได้ prefix expression ทันทีโดยไม่ต้องแปลงเป็น postfix",
+      "แปลง infix เป็น prefix ได้โดยตรงโดยไม่จำเป็นต้องใช้การ reverse ใดๆ เลย"
+    ],
+    "correct_index": 1,
+    "explanation": "วิธี reverse-convert-reverse มี 3 ขั้นตอนคือ (1) reverse นิพจน์ infix ตั้งต้น พร้อมสลับวงเล็บเปิดเป็นปิดและปิดเป็นเปิด (2) นำนิพจน์ที่ reverse แล้วไปแปลงเป็น postfix ด้วยขั้นตอนวิธีมาตรฐาน (3) reverse ผลลัพธ์ postfix ที่ได้อีกครั้งหนึ่ง จะได้ prefix expression ที่ถูกต้อง เป็นเทคนิคที่นิยมใช้คำนวณด้วยมือเพราะไม่ต้องจำขั้นตอนวิธีแยกต่างหากสำหรับ prefix"
+  },
+  {
+    "question": "เหตุใดในขั้นตอนที่ 2 ของวิธี 'reverse-convert-reverse' (แปลงนิพจน์ที่ reverse แล้วเป็น postfix) จึงต้องปรับกฎการ pop เมื่อ operator มี precedence เท่ากัน โดยเปลี่ยนจาก 'pop เมื่อเท่ากัน' เป็น 'ไม่ pop เมื่อเท่ากัน' (pop เฉพาะเมื่อ precedence สูงกว่าอย่างเคร่งครัดเท่านั้น)",
+    "options": [
+      "เพราะทำให้โค้ดเขียนง่ายขึ้นเท่านั้น ไม่มีผลต่อความถูกต้องของคำตอบ",
+      "เพราะการ reverse นิพจน์ทำให้ลำดับการอ่านจากซ้ายไปขวากลายเป็นการแทนลำดับขวาไปซ้ายของนิพจน์เดิม หากยัง pop เมื่อ precedence เท่ากันเหมือนเดิม จะทำให้ลำดับการดำเนินการของ operator ที่มี associativity แบบซ้ายไปขวาผิดเพี้ยนไปเมื่อ reverse กลับเป็น prefix",
+      "เพราะ operator ทุกตัวใน Prefix ต้องมี precedence เท่ากันหมดเสมอ",
+      "เพราะวงเล็บใน Prefix expression ไม่มีความหมาย จึงไม่ต้องสนใจ precedence เลย"
+    ],
+    "correct_index": 1,
+    "explanation": "เมื่อ reverse นิพจน์ ลำดับการสแกนจากซ้ายไปขวาของนิพจน์ที่ reverse แล้ว จะสอดคล้องกับการอ่านนิพจน์เดิมจากขวาไปซ้าย หากยังคงกฎ pop เมื่อ precedence เท่ากัน (ซึ่งถูกต้องสำหรับการอ่านซ้ายไปขวาตามปกติ) จะทำให้ลำดับการดำเนินการของ operator ที่มี associativity แบบซ้ายไปขวาในนิพจน์ดั้งเดิมถูกตีความผิดเมื่อ reverse ผลลัพธ์กลับมาเป็น prefix จึงต้องเปลี่ยนกฎเป็น pop เฉพาะเมื่อ precedence สูงกว่าอย่างเคร่งครัดเท่านั้น เพื่อรักษาลำดับการดำเนินการที่ถูกต้องไว้"
+  },
+  {
+    "question": "จงแปลง infix expression 'A-B+C' เป็น prefix expression โดยใช้วิธี reverse-convert-reverse",
+    "options": [
+      "-+ABC",
+      "+-ABC",
+      "A-B+C",
+      "CBA+-"
+    ],
+    "correct_index": 1,
+    "explanation": "ขั้นที่ 1: reverse 'A-B+C' ได้ 'C+B-A' ขั้นที่ 2: แปลง 'C+B-A' เป็น postfix โดยใช้กฎ pop เฉพาะเมื่อ precedence สูงกว่าอย่างเคร่งครัด: C->output 'C', + push (stack:[+]), B->output 'CB', - เทียบกับ '+' precedence เท่ากัน (ไม่ pop เพราะกฎใหม่) push '-' (stack:[+,-]), A->output 'CBA', จบนิพจน์ pop ทั้งหมด: pop '-' ก่อน (LIFO) ->'CBA-' pop '+' ->'CBA-+' ขั้นที่ 3: reverse 'CBA-+' ได้ '+-ABC' ซึ่งคือ prefix expression ที่ถูกต้อง หมายถึง 'ผลบวกของ (A ลบ B) กับ C'"
+  },
+  {
+    "question": "นิพจน์ '2^3^2' หากตัวดำเนินการ ^ (ยกกำลัง) เป็นแบบ Right-Associative (ประมวลผลจากขวาไปซ้าย) ผลลัพธ์ของนิพจน์นี้คือเท่าใด",
+    "options": [
+      "36 (คำนวณแบบ (2^3)^2)",
+      "64 (คำนวณแบบ (2^3)^2)",
+      "512 (คำนวณแบบ 2^(3^2))",
+      "18"
+    ],
+    "correct_index": 2,
+    "explanation": "เพราะ ^ เป็น Right-Associative จึงต้องประมวลผลจากขวาไปซ้าย คือคำนวณ 3^2 ก่อน (=9) แล้วจึงนำ 2 มายกกำลัง 9 ได้ 2^9 = 512 ต่างจาก operator แบบ Left-Associative อย่าง -, / ที่ต้องประมวลผลจากซ้ายไปขวา ซึ่งหากคำนวณแบบ (2^3)^2 = 8^2 = 64 จะเป็นผลลัพธ์ที่ผิดสำหรับ operator แบบ right-associative"
+  },
+  {
+    "question": "ข้อใดอธิบายความแตกต่างระหว่างขั้นตอนวิธีแปลง Infix เป็น Postfix กับ Infix เป็น Prefix (แบบ reverse-convert-reverse) ได้ถูกต้องที่สุด",
+    "options": [
+      "ทั้งสองขั้นตอนวิธีเหมือนกันทุกประการ ไม่มีความแตกต่างใดๆ เลย",
+      "Postfix ใช้ Stack ในการแปลง แต่ Prefix ไม่ต้องใช้ Stack เลย",
+      "Postfix แปลงโดยสแกนนิพจน์ต้นฉบับจากซ้ายไปขวาโดยตรงด้วย operator stack ส่วน Prefix (แบบ reverse-convert-reverse) ต้อง reverse นิพจน์ก่อน แล้วแปลงเป็น postfix ด้วยกฎที่ปรับเงื่อนไข pop เมื่อ precedence เท่ากัน จากนั้นจึง reverse ผลลัพธ์อีกครั้ง",
+      "Prefix ใช้ได้เฉพาะกับนิพจน์ที่ไม่มีวงเล็บเท่านั้น"
+    ],
+    "correct_index": 2,
+    "explanation": "การแปลงเป็น Postfix ทำได้โดยตรงจากการสแกนนิพจน์ต้นฉบับซ้ายไปขวาด้วย operator stack ตามกฎ precedence ปกติ ส่วนการแปลงเป็น Prefix ด้วยวิธี reverse-convert-reverse ต้อง reverse นิพจน์ตั้งต้นก่อน แปลงเป็น postfix ด้วยกฎที่ปรับเงื่อนไขการ pop เมื่อ precedence เท่ากัน (ไม่ pop) แล้วจึง reverse ผลลัพธ์อีกครั้งเพื่อให้ได้ prefix ที่ถูกต้อง ทั้งสองวิธีต่างก็ใช้ Stack เป็นเครื่องมือหลักเหมือนกัน"
+  },
+  {
+    "type": "fill_blank",
+    "question": "จงแปลง infix expression 'A-B+C' เป็น prefix expression โดยใช้วิธี reverse-convert-reverse (เขียนติดกันไม่มีเว้นวรรค)",
+    "answer": "+-ABC",
+    "accepted_answers": ["+-ABC", "+-abc"],
+    "explanation": "reverse 'A-B+C' ได้ 'C+B-A' แปลงเป็น postfix ด้วยกฎ pop เฉพาะเมื่อ precedence สูงกว่าเคร่งครัด ได้ 'CBA-+' แล้ว reverse อีกครั้งได้ '+-ABC' ซึ่งหมายถึง 'ผลบวกของ (A ลบ B) กับ C' ตรงกับความหมายเดิมของนิพจน์ infix"
+  },
+  {
+    "type": "fill_blank",
+    "question": "จงแปลง infix expression 'A*(B+C)-D' เป็น postfix expression โดยใช้ operator stack (เขียนติดกันไม่มีเว้นวรรค)",
+    "answer": "ABC+*D-",
+    "accepted_answers": ["ABC+*D-", "abc+*d-"],
+    "explanation": "ไล่ตามขั้นตอน operator stack: A->output A, * push, ( push, B->output AB, + push (เพราะ top เป็น'('), C->output ABC, ) pop '+' ออกมาใส่ output ('ABC+') แล้ว pop '(' ทิ้ง, สแกน '-' เทียบกับ '*' บน stack ซึ่งสูงกว่า จึง pop '*' ('ABC+*') แล้ว push '-', D->output 'ABC+*D', จบนิพจน์ pop '-' ที่เหลือออกมา ('ABC+*D-') ผลลัพธ์สุดท้ายคือ ABC+*D-"
+  },
       ]
+
+
+
+
+
+
+
+
+
     },
     {
       "chapter_id": "chapter_queue",
@@ -1050,7 +1496,105 @@ const quizData = {
     "accepted_answers": ["Queue", "queue"],
     "explanation": "BFS ใช้ Queue เก็บ node ที่รอเยี่ยมชม เพื่อให้เยี่ยมชม node ตามลำดับระดับความลึกจากใกล้ไปไกล ซึ่งเป็นคุณสมบัติ FIFO ของ Queue ที่ทำให้ node ที่ค้นพบก่อนจะถูกประมวลผลก่อน"
   },
+    {
+    "question": "แนวคิดหลักในการ implement Queue โดยใช้ Stack สองตัว (Two Stacks) เป็นไปตามข้อใด",
+    "options": [
+      "ใช้ Stack ตัวแรกสำหรับ enqueue (push เข้า) และเมื่อต้องการ dequeue หาก Stack ตัวที่สองว่างเปล่า ให้ pop ข้อมูลทั้งหมดจาก Stack ตัวแรกแล้ว push ลง Stack ตัวที่สอง (ซึ่งจะกลับลำดับให้ถูกต้อง) จากนั้นจึง pop จาก Stack ตัวที่สองเพื่อทำ dequeue",
+      "ใช้ Stack ทั้งสองตัวสลับกัน push ข้อมูลทีละตัวแบบสุ่ม",
+      "ใช้ Stack ตัวแรกเก็บข้อมูลครึ่งหนึ่ง และ Stack ตัวที่สองเก็บข้อมูลอีกครึ่งหนึ่งตลอดเวลา",
+      "ไม่สามารถ implement Queue ด้วย Stack ได้ไม่ว่ากรณีใด"
+    ],
+    "correct_index": 0,
+    "explanation": "หลักการคือใช้ Stack ตัวแรก (inStack) รับข้อมูลเข้าด้วยการ push ตามปกติเมื่อ enqueue เมื่อต้องการ dequeue จะตรวจสอบ Stack ตัวที่สอง (outStack) ก่อน หากว่างเปล่าให้ pop ข้อมูลทั้งหมดจาก inStack แล้ว push ลง outStack ตามลำดับ (การกระทำนี้จะกลับลำดับข้อมูลให้ตัวที่เข้ามาก่อนอยู่บนสุดของ outStack พอดี) จากนั้นจึง pop จาก outStack เพื่อได้ผลลัพธ์แบบ FIFO ที่ถูกต้อง"
+  },
+  {
+    "question": "กำหนด Queue แบบ Array (Linear Queue ไม่ใช่ Circular) ขนาด 5 ช่อง เริ่มต้น front=0, rear=-1 (คิวว่างเปล่า) หลังทำ enqueue(10), enqueue(20), dequeue(), enqueue(30) ตามลำดับ ค่าของ front และ rear หลังทำครบทุกขั้นตอนคือข้อใด",
+    "options": [
+      "front=0, rear=2",
+      "front=1, rear=2",
+      "front=1, rear=1",
+      "front=0, rear=1"
+    ],
+    "correct_index": 1,
+    "explanation": "ไล่ตามลำดับ: enqueue(10) -> rear=0 ([10]), enqueue(20) -> rear=1 ([10,20]), dequeue() นำ 10 ออก -> front=1 ([20]), enqueue(30) -> rear=2 ([20,30]) ดังนั้นค่าสุดท้ายคือ front=1, rear=2"
+  },
+  {
+    "question": "'Queue Underflow' เกิดขึ้นในสถานการณ์ใด",
+    "options": [
+      "เมื่อพยายาม enqueue ข้อมูลเข้าไปในคิวที่เต็มแล้ว",
+      "เมื่อพยายาม dequeue ข้อมูลออกจากคิวในขณะที่คิวว่างเปล่าอยู่ ไม่มีข้อมูลให้นำออก",
+      "เมื่อคิวมีขนาดใหญ่เกินไปจนใช้หน่วยความจำหมด",
+      "เมื่อ front และ rear มีค่าเท่ากันเสมอ"
+    ],
+    "correct_index": 1,
+    "explanation": "Queue Underflow เกิดขึ้นเมื่อพยายามเรียก operation dequeue() ในขณะที่คิวไม่มีข้อมูลเหลืออยู่เลย (ว่างเปล่า) ซึ่งไม่มีสิ่งใดให้นำออกมาได้ เช่นเดียวกับแนวคิด Stack Underflow แต่เกิดกับ Queue แทน"
+  },
+  {
+    "question": "'Queue Overflow' ใน Linear Queue (ไม่ใช่ Circular Queue) ที่ implement ด้วย Array ขนาดคงที่ อาจเกิดขึ้นได้แม้ว่าคิวจะยังมีพื้นที่ว่างอยู่จริงๆ เพราะเหตุใด",
+    "options": [
+      "เพราะ Array ไม่สามารถเก็บข้อมูลชนิดตัวเลขได้",
+      "เพราะตำแหน่ง rear ใน Linear Queue เดินหน้าทางเดียวไม่มีวันย้อนกลับ เมื่อ rear ไปถึง index สุดท้ายของ array แล้ว แม้ด้านหน้าจะมีพื้นที่ว่างจาก dequeue ก็ไม่สามารถ enqueue เพิ่มได้อีก",
+      "เพราะ front ต้องมีค่ามากกว่า rear เสมอ",
+      "เพราะ Linear Queue ไม่รองรับ operation dequeue เลย"
+    ],
+    "correct_index": 1,
+    "explanation": "นี่คือข้อจำกัดสำคัญของ Linear Queue ที่ทำให้ต้องมี Circular Queue มาแก้ปัญหา เพราะตำแหน่ง rear เดินหน้าทางเดียวเท่านั้น เมื่อ rear ไปถึงตำแหน่งสุดท้ายของ array (index สูงสุด) จะไม่สามารถ enqueue เพิ่มได้อีกแม้ว่าด้านหน้าของ array จะมีพื้นที่ว่างเหลือจากการ dequeue ไปก่อนหน้านี้ก็ตาม เพราะ index ของ rear ไม่สามารถวนกลับไปใช้พื้นที่ว่างด้านหน้าได้"
+  },
+  {
+    "question": "หากใช้ Linked List (ที่มีทั้ง head และ tail pointer) ในการ implement Queue การ enqueue ข้อมูลใหม่ที่ตำแหน่ง tail มี Time Complexity เท่าใด",
+    "options": [
+      "O(n) เพราะต้อง traverse หาตำแหน่งท้ายทุกครั้ง",
+      "O(1) เพราะมี tail pointer เก็บตำแหน่งท้ายไว้อยู่แล้ว ทำให้เพิ่ม node ใหม่ต่อท้ายได้ทันทีโดยไม่ต้อง traverse",
+      "O(log n)",
+      "O(n^2)"
+    ],
+    "correct_index": 1,
+    "explanation": "หากมี tail pointer เก็บตำแหน่ง node สุดท้ายไว้เสมอ การ enqueue เพียงสร้าง node ใหม่ ปรับ LINK ของ tail เดิมให้ชี้มาที่ node ใหม่ แล้วปรับ tail ให้ชี้มาที่ node ใหม่แทน ซึ่งเป็นการปรับ pointer เพียงไม่กี่ตัวโดยไม่ต้อง traverse หาตำแหน่งท้าย จึงมี Time Complexity เป็น O(1)"
+  },
+  {
+    "question": "ข้อเสียเปรียบหลักของการ implement Queue ด้วย Array (แม้จะเป็นแบบ Circular) เมื่อเทียบกับการ implement ด้วย Linked List คือข้อใด",
+    "options": [
+      "Array มีขนาดความจุสูงสุดที่ถูกกำหนดไว้ตายตัวตั้งแต่แรก หากข้อมูลเกินความจุนั้นจะไม่สามารถ enqueue เพิ่มได้อีก ต่างจาก Linked List ที่ขยายขนาดได้ตามหน่วยความจำที่มี",
+      "Array ไม่สามารถทำ enqueue หรือ dequeue ได้เลย",
+      "Array ใช้ Time Complexity สูงกว่า Linked List ในทุก operation เสมอ",
+      "Array ไม่รองรับข้อมูลชนิดตัวเลข"
+    ],
+    "correct_index": 0,
+    "explanation": "แม้ Circular Queue จะใช้พื้นที่ได้เต็มประสิทธิภาพมากกว่า Linear Queue แต่ก็ยังคงมีข้อจำกัดเรื่องขนาดความจุสูงสุดที่กำหนดไว้ตายตัวตั้งแต่ตอนสร้าง array หากมีข้อมูลจำนวนมากเกินความจุที่กำหนดจะไม่สามารถ enqueue เพิ่มได้อีก ในขณะที่ Queue ที่ implement ด้วย Linked List สามารถขยายขนาดได้ตามหน่วยความจำที่ระบบมีอยู่ ไม่ผูกติดกับขนาดคงที่"
+  },
+  {
+    "question": "แนวคิด 'Amortized Analysis' (การวิเคราะห์ต้นทุนเฉลี่ย) มีความเกี่ยวข้องกับการ implement Queue ด้วย Two Stacks อย่างไร",
+    "options": [
+      "ไม่มีความเกี่ยวข้องกันเลย เป็นคนละแนวคิด",
+      "แม้บาง operation dequeue อาจต้องย้ายข้อมูลทั้งหมดจาก stack แรกไป stack ที่สอง (ดูเหมือนจะใช้เวลา O(n) ในครั้งนั้น) แต่ในความเป็นจริงแต่ละสมาชิกจะถูกย้ายจาก stack แรกไป stack ที่สองเพียงครั้งเดียวตลอดอายุการใช้งาน ทำให้เมื่อเฉลี่ยต้นทุนตลอดหลาย operation แล้ว ต้นทุนเฉลี่ยต่อ operation ยังคงเป็น O(1)",
+      "Amortized Analysis หมายถึงการรับประกันว่าทุก operation จะใช้เวลา O(1) เท่ากันหมดในทุกครั้งไม่มีข้อยกเว้น",
+      "แนวคิดนี้ใช้ได้เฉพาะกับ Array เท่านั้น ไม่เกี่ยวกับ Stack หรือ Queue"
+    ],
+    "correct_index": 1,
+    "explanation": "Amortized Analysis คือการวิเคราะห์ต้นทุนเฉลี่ยของ operation เมื่อพิจารณาลำดับการทำงานทั้งหมด ไม่ใช่มองแค่ operation เดียว ในกรณี Queue ด้วย Two Stacks แม้บาง dequeue อาจต้องย้ายข้อมูลจำนวนมากจาก stack แรกไป stack ที่สอง (ทำให้ครั้งนั้นใช้เวลา O(n)) แต่ทุกสมาชิกจะถูกย้ายแบบนี้เพียงครั้งเดียวตลอดช่วงชีวิตในคิว เมื่อกระจายต้นทุนนี้ไปตลอดทุก operation ที่เกิดขึ้น ต้นทุนเฉลี่ยต่อ operation จึงยังคงเป็น O(1)"
+  },
+  {
+    "type": "fill_blank",
+    "question": "กำหนด Linear Queue แบบ Array, front=0, rear=-1 (เริ่มต้นว่างเปล่า) หลังทำ enqueue(A), enqueue(B), enqueue(C), dequeue(), dequeue() ตามลำดับ ค่าของ front หลังทำครบทุกขั้นตอนคือเท่าใด (ตอบเป็นตัวเลข)",
+    "answer": "2",
+    "accepted_answers": ["2"],
+    "explanation": "ไล่ตามลำดับ: enqueue(A)->rear=0, enqueue(B)->rear=1, enqueue(C)->rear=2, dequeue() นำ A ออก -> front=1, dequeue() นำ B ออก -> front=2 ดังนั้นค่าสุดท้ายของ front คือ 2 (ชี้ไปที่ C ซึ่งเป็นสมาชิกเดียวที่เหลืออยู่)"
+  },
+  {
+    "type": "fill_blank",
+    "question": "คำศัพท์ที่ใช้เรียกการวิเคราะห์ต้นทุนเฉลี่ยของ operation เมื่อพิจารณาลำดับการทำงานทั้งหมด (เช่นที่ใช้อธิบายประสิทธิภาพของ Queue แบบ Two Stacks) เรียกว่าอะไร (ภาษาอังกฤษ)",
+    "answer": "Amortized Analysis",
+    "accepted_answers": ["Amortized Analysis", "amortized analysis", "Amortized", "amortized"],
+    "explanation": "Amortized Analysis คือวิธีวิเคราะห์ต้นทุนของ operation โดยกระจายต้นทุนของ operation ที่แพงเป็นครั้งคราวออกไปตลอดลำดับการทำงานทั้งหมด ทำให้ได้ต้นทุนเฉลี่ยต่อ operation ที่สะท้อนประสิทธิภาพที่แท้จริงมากกว่าการพิจารณา operation เดียวแบบ worst-case"
+  },
       ]
+
+
+
+
+
+
+
     },
     {
       "chapter_id": "chapter_recursion",
@@ -1259,7 +1803,109 @@ const quizData = {
     "answer": "21",
     "accepted_answers": ["21"],
     "explanation": "ไล่ตามนิยาม: sum(6) = 6+5+4+3+2+1+sum(0) = 6+5+4+3+2+1+0 = 21 เป็นการรวมค่าจำนวนเต็มตั้งแต่ 1 ถึง 6 โดยใช้หลักการ recursion ที่ลดค่า n ลงทีละ 1 จนถึง Base Case ที่ n=0"
-  }
+  },
+    {
+    "question": "เมื่อวาด Recursion Tree ของ fibonacci(4) โดยใช้นิยาม fibonacci(n)=fibonacci(n-1)+fibonacci(n-2), fibonacci(0)=0, fibonacci(1)=1 จำนวนครั้งทั้งหมดที่ฟังก์ชัน fibonacci ถูกเรียก (นับรวมการเรียกครั้งแรกสุดด้วย) เท่ากับเท่าใด",
+    "options": [
+      "5",
+      "7",
+      "9",
+      "11"
+    ],
+    "correct_index": 2,
+    "explanation": "วาด Recursion Tree ของ fibonacci(4) จะได้: fib(4) เรียก fib(3) และ fib(2); fib(3) เรียก fib(2) และ fib(1); fib(2) (ตัวแรก จาก fib(3)) เรียก fib(1) และ fib(0); fib(2) (ตัวที่สอง จาก fib(4)) เรียก fib(1) และ fib(0) นับรวม node ทั้งหมดในต้นไม้: fib(4)=1, fib(3)=1, fib(2)=2, fib(1)=3, fib(0)=2 รวมทั้งหมด 1+1+2+3+2=9 ครั้ง"
+  },
+  {
+    "question": "จาก Recursion Tree ของ fibonacci(4) ในข้อก่อนหน้า จำนวนครั้งที่ฟังก์ชันถูกเรียกและเป็น Base Case (คือ fibonacci(0) หรือ fibonacci(1)) มีทั้งหมดกี่ครั้ง",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correct_index": 2,
+    "explanation": "จาก Recursion Tree ของ fibonacci(4): fibonacci(1) ถูกเรียกทั้งหมด 3 ครั้ง (เป็นลูกของ fib(2) ตัวแรก, ลูกของ fib(3), และลูกของ fib(2) ตัวที่สอง) และ fibonacci(0) ถูกเรียกทั้งหมด 2 ครั้ง (เป็นลูกของ fib(2) ทั้งสองตัว) รวม Base Case ทั้งหมด 3+2=5 ครั้ง ซึ่งสอดคล้องกับจำนวน leaf node ในต้นไม้การเรียกซ้ำนี้"
+  },
+  {
+    "question": "ความลึกสูงสุด (maximum depth) ของ Call Stack ขณะประมวลผล fibonacci(4) แบบ recursive (นับรวมการเรียกครั้งแรกสุด) เท่ากับเท่าใด",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correct_index": 2,
+    "explanation": "เส้นทางที่ลึกที่สุดใน Recursion Tree ของ fibonacci(4) คือเส้นทางที่เรียก fibonacci(n-1) ต่อเนื่องกันไปเรื่อยๆ: fib(4)->fib(3)->fib(2)->fib(1) ซึ่งมีทั้งหมด 4 ระดับ (รวมการเรียกครั้งแรกสุด) ดังนั้นความลึกสูงสุดของ Call Stack คือ 4 แม้ว่าจำนวนการเรียกทั้งหมดจะมีถึง 9 ครั้ง แต่ ณ เวลาใดเวลาหนึ่งจะมี stack frame ที่ active พร้อมกันไม่เกิน 4 เฟรม"
+  },
+  {
+    "question": "เหตุใด Recursion Tree ของ factorial(n) (Linear Recursion ที่เรียกตัวเองเพียงครั้งเดียวต่อขั้น) จึงมีจำนวน node น้อยกว่า Recursion Tree ของ fibonacci(n) (Tree Recursion) อย่างมากเมื่อ n มีค่าเท่ากัน",
+    "options": [
+      "เพราะ factorial คำนวณตัวเลขที่มีค่าน้อยกว่า fibonacci เสมอ",
+      "เพราะ factorial(n) เรียกตัวเองเพียงหนึ่งครั้งต่อขั้น ทำให้ Recursion Tree เป็นเส้นตรงมีจำนวน node เท่ากับ n+1 (เติบโตแบบ O(n)) ในขณะที่ fibonacci(n) เรียกตัวเองสองครั้งต่อขั้น ทำให้ Recursion Tree แตกแขนงเพิ่มขึ้นแบบทวีคูณ (เติบโตแบบ O(2^n))",
+      "เพราะ fibonacci ไม่มี Base Case จึงมี node มากกว่า",
+      "เพราะ factorial ใช้ Iteration แทน Recursion เสมอ"
+    ],
+    "correct_index": 1,
+    "explanation": "factorial(n) = n × factorial(n-1) เรียกตัวเองเพียงหนึ่งครั้งต่อขั้น ทำให้ Recursion Tree มีลักษณะเป็นเส้นตรงเดียว มีจำนวน node ทั้งหมดเท่ากับ n+1 ซึ่งเติบโตแบบ Linear O(n) ในขณะที่ fibonacci(n) = fibonacci(n-1) + fibonacci(n-2) เรียกตัวเองสองครั้งต่อขั้น ทำให้ Recursion Tree แตกแขนงออกเป็นสองทางในทุกระดับที่ไม่ใช่ Base Case ส่งผลให้จำนวน node ทั้งหมดเติบโตแบบ Exponential O(2^n) ซึ่งมากกว่า factorial อย่างมากเมื่อ n มีค่าสูงขึ้น"
+  },
+  {
+    "question": "ข้อใดอธิบายหลักการทำงานของตัวแปรท้องถิ่น (local variable) และพารามิเตอร์ในแต่ละการเรียก Recursive function ได้ถูกต้องที่สุด",
+    "options": [
+      "ทุกการเรียกฟังก์ชันตัวเองใช้ตัวแปรท้องถิ่นและพารามิเตอร์ชุดเดียวกันร่วมกันทั้งหมด การเปลี่ยนค่าในการเรียกหนึ่งจะกระทบการเรียกอื่นทันที",
+      "แต่ละครั้งที่ฟังก์ชันเรียกตัวเอง จะมีการสร้าง stack frame ใหม่ที่มีสำเนาของตัวแปรท้องถิ่นและพารามิเตอร์เป็นของตัวเองแยกต่างหาก ไม่ปะปนกับการเรียกครั้งอื่น",
+      "ตัวแปรท้องถิ่นใน Recursive function จะถูกลบทิ้งทันทีที่ฟังก์ชันเรียกตัวเอง",
+      "พารามิเตอร์ของฟังก์ชัน Recursive ต้องมีค่าเท่ากันในทุกการเรียกเสมอ"
+    ],
+    "correct_index": 1,
+    "explanation": "หลักการสำคัญของ Call Stack คือทุกครั้งที่มีการเรียกฟังก์ชัน (รวมถึงการเรียกตัวเองแบบ recursive) ระบบจะสร้าง stack frame ใหม่ ซึ่งมีพื้นที่เก็บสำเนาของตัวแปรท้องถิ่นและพารามิเตอร์เป็นของตัวเองแยกต่างหากจากการเรียกครั้งอื่นโดยสิ้นเชิง ทำให้แต่ละการเรียกทำงานอย่างเป็นอิสระต่อกัน แม้จะเป็นฟังก์ชันเดียวกันก็ตาม นี่คือเหตุผลที่ recursion สามารถทำงานได้อย่างถูกต้องโดยไม่สับสนระหว่างค่าตัวแปรของแต่ละระดับการเรียก"
+  },
+  {
+    "question": "เมื่อการเรียก Recursive function ครั้งหนึ่ง 'return' ค่ากลับไป การควบคุมการทำงาน (control flow) จะดำเนินต่อไปอย่างไร",
+    "options": [
+      "โปรแกรมจะจบการทำงานทั้งหมดทันที",
+      "การควบคุมจะกลับไปยังจุดที่เรียกฟังก์ชันนั้น (ใน stack frame ของผู้เรียก) แล้วดำเนินการต่อจากจุดนั้นทันที โดยใช้ค่าที่ return กลับมาในการคำนวณขั้นต่อไป",
+      "การควบคุมจะกลับไปเริ่มต้นที่ฟังก์ชัน main() เสมอไม่ว่าจะอยู่ระดับใด",
+      "ค่าที่ return จะถูกละทิ้งไปโดยอัตโนมัติ ไม่ถูกนำไปใช้ต่อ"
+    ],
+    "correct_index": 1,
+    "explanation": "เมื่อฟังก์ชัน (รวมถึงการเรียกซ้ำแบบ recursive) return ค่ากลับ stack frame ของการเรียกนั้นจะถูก pop ออกจาก Call Stack และการควบคุมจะกลับไปยังจุดที่เรียกฟังก์ชันนั้นใน stack frame ของผู้เรียก (caller) ซึ่งจะดำเนินการทำงานต่อจากจุดนั้นทันที โดยนำค่าที่ return กลับมาไปใช้ในการคำนวณขั้นต่อไป เช่นในกรณี factorial(n) = n * factorial(n-1) ค่าที่ return จาก factorial(n-1) จะถูกนำไปคูณกับ n ทันทีที่การควบคุมกลับมา"
+  },
+  {
+    "question": "กำหนดฟังก์ชัน factorial(n) = n × factorial(n-1), factorial(0) = 1 จำนวนครั้งทั้งหมดที่ฟังก์ชัน factorial ถูกเรียก (นับรวมการเรียกครั้งแรกสุด) เมื่อคำนวณ factorial(3) เท่ากับเท่าใด",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correct_index": 1,
+    "explanation": "การคำนวณ factorial(3) จะเรียกฟังก์ชันตามลำดับ: factorial(3) -> factorial(2) -> factorial(1) -> factorial(0) รวมทั้งหมด 4 ครั้ง (นับรวมการเรียกครั้งแรกสุดคือ factorial(3) ด้วย) เพราะ factorial เป็น Linear Recursion ที่เรียกตัวเองเพียงหนึ่งครั้งต่อขั้น จำนวนครั้งที่เรียกทั้งหมดจึงเท่ากับ n+1 เสมอ"
+  },
+  {
+    "question": "ข้อใดอธิบายเหตุผลที่ fibonacci แบบ recursive ธรรมดา (naive) มี Time Complexity แบบ Exponential O(2^n) ได้ถูกต้องที่สุด",
+    "options": [
+      "เพราะการบวกเลขสองตัวใช้เวลานานกว่าการคูณเลขสองตัวมาก",
+      "เพราะ fibonacci(n) เรียกตัวเองสองครั้งในทุกขั้นที่ไม่ใช่ Base Case (fibonacci(n-1) และ fibonacci(n-2)) และค่าบางค่า เช่น fibonacci(n-2) ถูกคำนวณซ้ำซ้อนหลายครั้งในหลายกิ่งของ Recursion Tree โดยไม่มีการเก็บผลลัพธ์ไว้ใช้ซ้ำ ทำให้จำนวนการเรียกทั้งหมดเติบโตแบบทวีคูณ",
+      "เพราะ fibonacci ไม่มี Base Case จึงต้องคำนวณไปเรื่อยๆ ไม่มีที่สิ้นสุด",
+      "เพราะ fibonacci ใช้หน่วยความจำมากกว่า factorial เสมอ"
+    ],
+    "correct_index": 1,
+    "explanation": "สาเหตุหลักที่ทำให้ fibonacci แบบ recursive ธรรมดามี Time Complexity แบบ Exponential คือการเรียกตัวเองสองครั้งในทุกขั้น (fibonacci(n-1) และ fibonacci(n-2)) ทำให้ Recursion Tree แตกแขนงเพิ่มขึ้นเป็นทวีคูณ และค่าเดียวกัน (เช่น fibonacci(n-2)) จะถูกคำนวณซ้ำซ้อนในหลายกิ่งของต้นไม้โดยไม่มีการจดจำผลลัพธ์ที่เคยคำนวณไปแล้ว (ไม่มี memoization) ทำให้เสียเวลาคำนวณค่าเดิมซ้ำไปซ้ำมาจำนวนมาก ส่งผลให้ Time Complexity รวมเป็น O(2^n)"
+  },
+  {
+    "type": "fill_blank",
+    "question": "จำนวนครั้งทั้งหมดที่ฟังก์ชัน fibonacci ถูกเรียก (นับรวมการเรียกครั้งแรกสุด) เมื่อคำนวณ fibonacci(4) ด้วยวิธี recursive ธรรมดา เท่ากับเท่าใด (ตอบเป็นตัวเลข)",
+    "answer": "9",
+    "accepted_answers": ["9"],
+    "explanation": "จากการวาด Recursion Tree ของ fibonacci(4) จะนับจำนวน node ทั้งหมดได้ 9 ครั้ง (fib(4)=1, fib(3)=1, fib(2)=2, fib(1)=3, fib(0)=2 รวม 1+1+2+3+2=9)"
+  },
+  {
+    "type": "fill_blank",
+    "question": "ความลึกสูงสุด (maximum depth) ของ Call Stack ขณะประมวลผล factorial(5) แบบ recursive (นับรวมการเรียกครั้งแรกสุดและ Base Case) เท่ากับเท่าใด (ตอบเป็นตัวเลข)",
+    "answer": "6",
+    "accepted_answers": ["6"],
+    "explanation": "การเรียก factorial(5) จะไล่เรียกตามลำดับ: factorial(5)->factorial(4)->factorial(3)->factorial(2)->factorial(1)->factorial(0) ซึ่งมีทั้งหมด 6 ระดับ (นับรวม factorial(5) และ factorial(0) ซึ่งเป็น Base Case ด้วย) ดังนั้นความลึกสูงสุดของ Call Stack คือ 6 stack frame ที่ active พร้อมกัน ณ จุดที่ลึกที่สุด"
+  },
       ]
     }
   ]
