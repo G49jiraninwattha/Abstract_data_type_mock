@@ -159,6 +159,15 @@ document.getElementById('question-count').addEventListener('change', (e) => {
 });
 
 // --- Start Quiz Logic ---
+// ฟังก์ชันสำหรับสุ่ม Array ให้กระจายตัวดีที่สุด (Fisher-Yates Shuffle)
+const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+};
+
 document.getElementById('start-btn').addEventListener('click', () => {
     const Q = parseInt(document.getElementById('question-count').value);
     const T_minutes = (180 / 55) * Q;
@@ -169,19 +178,27 @@ document.getElementById('start-btn').addEventListener('click', () => {
     const focusedChapterIds = Array.from(selectedCbs).map(cb => cb.value);
 
     let allQuestions = [];
+    const seenQuestions = new Set(); // 🛡️ เพิ่ม Set มาช่วยจำคำถามที่ดึงมาแล้ว
+
     quizData.chapters.forEach(ch => {
         chapterScores[ch.chapter_name] = 0;
         chapterTotals[ch.chapter_name] = 0;
         chapterWrongs[ch.chapter_name] = 0;
         ch.questions.forEach(q => {
-            allQuestions.push({...q, chapter_name: ch.chapter_name, chapter_id: ch.chapter_id});
+            // 🛡️ เช็คก่อนว่าคำถามนี้ (q.question) เคยถูกดึงมาหรือยัง ถ้ายังไม่เคยค่อย push
+            const questionText = q.question.trim();
+            if (!seenQuestions.has(questionText)) {
+                seenQuestions.add(questionText);
+                allQuestions.push({...q, chapter_name: ch.chapter_name, chapter_id: ch.chapter_id});
+            }
         });
     });
 
     // Weighting Logic (70% Focus, 30% Other)
     if (focusedChapterIds.length > 0) {
-        const focusedPool = allQuestions.filter(q => focusedChapterIds.includes(q.chapter_id)).sort(() => 0.5 - Math.random());
-        const otherPool = allQuestions.filter(q => !focusedChapterIds.includes(q.chapter_id)).sort(() => 0.5 - Math.random());
+        // ใช้ shuffleArray แทน .sort(() => 0.5 - Math.random())
+        const focusedPool = shuffleArray(allQuestions.filter(q => focusedChapterIds.includes(q.chapter_id)));
+        const otherPool = shuffleArray(allQuestions.filter(q => !focusedChapterIds.includes(q.chapter_id)));
         
         let targetFocused = Math.round(Q * 0.7);
         let actualFocused = Math.min(targetFocused, focusedPool.length);
@@ -191,9 +208,10 @@ document.getElementById('start-btn').addEventListener('click', () => {
             actualFocused = Math.min(focusedPool.length, Q - actualOther);
         }
 
-        selectedQuestions = [...focusedPool.slice(0, actualFocused), ...otherPool.slice(0, actualOther)].sort(() => 0.5 - Math.random());
+        // สุ่มรวมอีกรอบหลังจากการตัดแบ่ง
+        selectedQuestions = shuffleArray([...focusedPool.slice(0, actualFocused), ...otherPool.slice(0, actualOther)]);
     } else {
-        selectedQuestions = allQuestions.sort(() => 0.5 - Math.random()).slice(0, Q);
+        selectedQuestions = shuffleArray(allQuestions).slice(0, Q);
     }
 
     if(selectedQuestions.length === 0) return alert("ไม่พบข้อสอบในระบบ");
